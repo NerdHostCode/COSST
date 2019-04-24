@@ -3,7 +3,9 @@
 use App\Announcement;
 use App\Http\Controllers\WidgetController;
 
-define("ROOTDIR", dirname(__DIR__));
+if (!defined("ROOTDIR")) {
+    define("ROOTDIR", dirname(__DIR__));
+}
 
 /*
 |--------------------------------------------------------------------------
