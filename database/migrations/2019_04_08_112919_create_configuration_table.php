@@ -15,7 +15,7 @@ class CreateConfigurationTable extends Migration
     public function up()
     {
         Schema::create('configuration', function (Blueprint $table) {
-            $table->string('setting', 250)->unique();
+            $table->string('setting')->unique();
             $table->text('value');
             $table->timestamps();
         });
