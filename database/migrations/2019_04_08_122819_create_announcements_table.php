@@ -1,9 +1,9 @@
 <?php
 
 use App\Announcement;
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class CreateAnnouncementsTable extends Migration
 {
@@ -24,16 +24,17 @@ class CreateAnnouncementsTable extends Migration
         });
 
         $this->populate([
-            'title' => 'Welcome to COSST!',
+            'title'   => 'Welcome to COSST!',
             'article' => htmlentities('COSST stands for Completely Open Source Support Ticketing '
-            . 'and is provided open-source, completely free of charge!<br><br>For help '
-            . 'getting started, check out our <a href="https://docs.cosst.co.uk/" '
-            . 'target="_blank">Documentation</a>.</p>'),
+            .'and is provided open-source, completely free of charge!<br><br>For help '
+            .'getting started, check out our <a href="https://docs.cosst.co.uk/" '
+            .'target="_blank">Documentation</a>.</p>'),
             'category' => 1,
         ]);
     }
 
-    private function populate(array $data) {
+    private function populate(array $data)
+    {
         $announcement = new Announcement();
         foreach ($data as $key => $value) {
             $announcement->$key = $value;

@@ -15,6 +15,7 @@ class AnnouncementsController extends Controller
     public function index()
     {
         $announcements = Announcement::where('hidden', '!=', '1')->paginate(5);
+
         return view('allannouncements', ['announcements' => $announcements]);
     }
 
@@ -31,7 +32,8 @@ class AnnouncementsController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
+     *
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -42,7 +44,8 @@ class AnnouncementsController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
+     *
      * @return \Illuminate\Http\Response
      */
     public function show(Announcement $announcement)
@@ -51,23 +54,25 @@ class AnnouncementsController extends Controller
         $next = (object) [];
         $last->status = false;
         $next->status = false;
-        if ( $result = Announcement::where('id', ($announcement->id - 1))->first() ){
+        if ($result = Announcement::where('id', ($announcement->id - 1))->first()) {
             $last->status = true;
             $last->id = $result->id;
             $last->title = $result->title;
         }
-        if ( $result = Announcement::where('id', ($announcement->id + 1))->first() ){
+        if ($result = Announcement::where('id', ($announcement->id + 1))->first()) {
             $next->status = true;
             $next->id = $result->id;
             $next->title = $result->title;
         }
+
         return view('announcement', compact('announcement', 'last', 'next'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
+     *
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -78,8 +83,9 @@ class AnnouncementsController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int                      $id
+     *
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -90,7 +96,8 @@ class AnnouncementsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
+     *
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
