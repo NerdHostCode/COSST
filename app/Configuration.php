@@ -8,7 +8,8 @@ class Configuration extends Model
 {
     protected $table = 'configuration';
 
-    public static function get(string $setting) {
+    public static function get(string $setting)
+    {
         return self::where('setting', $setting)
             ->value('value');
     }
