@@ -36,8 +36,8 @@ class UserTest extends TestCase
     public function testUserLogin()
     {
         $user = [
-            'email' => 'blackhole@cosst.co.uk',
-            'password' => 'passwordtest'
+            'email'    => 'blackhole@cosst.co.uk',
+            'password' => 'passwordtest',
         ];
 
         $response = $this->post('/login', $user);
