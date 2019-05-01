@@ -30,6 +30,8 @@ class RoutingTest extends TestCase
 
     /**
      * @depends testRouting
+     *
+     * @return void
      */
     public function testErrors()
     {
