@@ -1,10 +1,9 @@
 <?php
 
 use App\Announcement;
-use App\Http\Controllers\WidgetController;
 
-if (!defined("ROOTDIR")) {
-    define("ROOTDIR", dirname(__DIR__));
+if (!defined('ROOTDIR')) {
+    define('ROOTDIR', dirname(__DIR__));
 }
 
 /*
@@ -34,20 +33,20 @@ Route::get('/status', 'PublicController@serviceStatus')->name('service-status');
 
 Auth::routes([
     // Ensure users email is verified.
-    'verify' => true
+    'verify' => true,
 ]);
 
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('/tickets', 'TicketController')
     ->except([
-        'edit', 'update', 'destroy'
+        'edit', 'update', 'destroy',
     ]);
 
 Route::resource('/announcements', 'AnnouncementsController')
     ->only([
-        'index', 'show'
+        'index', 'show',
     ])->names([
         'index' => 'announcements',
-        'show' => 'announcements.show'
+        'show'  => 'announcements.show',
     ]);

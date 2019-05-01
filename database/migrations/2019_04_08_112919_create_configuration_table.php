@@ -1,9 +1,9 @@
 <?php
 
 use App\Configuration;
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class CreateConfigurationTable extends Migration
 {
@@ -25,7 +25,8 @@ class CreateConfigurationTable extends Migration
         $this->populate('CompanyName', env('app.name', 'COSST'));
     }
 
-    private function populate(string $setting, string $value) {
+    private function populate(string $setting, string $value)
+    {
         $config = new Configuration();
         $config->setting = $setting;
         $config->value = $value;

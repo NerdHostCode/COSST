@@ -12,15 +12,15 @@ return [
     |
     */
 
-    'welcome_title' => 'Welcome',
-    'see_more' => 'See More',
-    'dashboard' => 'Dashboard',
-    'knowledgebase' => 'Knowledgebase',
-    'announcements' => 'Announcements',
-    'service_status' => 'Service Status',
-    'register' => 'Register',
-    'login' => 'Login',
-    'welcome' => 'Welcome',
-    'welcometo' => 'Welcome to',
-    'viewprofilelink' => 'View Profile'
+    'welcome_title'   => 'Welcome',
+    'see_more'        => 'See More',
+    'dashboard'       => 'Dashboard',
+    'knowledgebase'   => 'Knowledgebase',
+    'announcements'   => 'Announcements',
+    'service_status'  => 'Service Status',
+    'register'        => 'Register',
+    'login'           => 'Login',
+    'welcome'         => 'Welcome',
+    'welcometo'       => 'Welcome to',
+    'viewprofilelink' => 'View Profile',
 ];
