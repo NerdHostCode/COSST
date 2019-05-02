@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class CreateKnowledgebaseTable extends Migration
 {
@@ -18,7 +18,7 @@ class CreateKnowledgebaseTable extends Migration
             $table->string('title');
             $table->text('article');
             $table->integer('views');
-            $table->json('votes');
+            $table->string('votes');
             $table->integer('registered')->length('1')->default('0');
             $table->bigInteger('category')->default('0');
             $table->timestamps();

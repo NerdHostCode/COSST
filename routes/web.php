@@ -53,7 +53,7 @@ Route::resource('/announcements', 'AnnouncementsController')
 
 Route::resource('/knowledgebase', 'KnowledgebaseController')
     ->only([
-        'index', 'show'
+        'index', 'show',
     ])->names([
         'index' => 'knowledgebase',
         'show'  => 'knowledgebase.show',

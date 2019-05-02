@@ -3,13 +3,11 @@
 namespace Tests\Feature;
 
 use Tests\TestCase;
-use Illuminate\Foundation\Testing\WithFaker;
-use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class InstallerTest extends TestCase
 {
     /**
-     * Ensure configuration
+     * Ensure configuration.
      *
      * @return void
      */
@@ -18,7 +16,7 @@ class InstallerTest extends TestCase
         $this->assertDatabaseHas(
             'announcements',
             [
-                "title" => "Welcome to COSST!"
+                'title' => 'Welcome to COSST!',
             ]
         );
     }
