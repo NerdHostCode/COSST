@@ -39,7 +39,8 @@ class KnowledgebaseController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
+     *
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -50,7 +51,8 @@ class KnowledgebaseController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Knowledgebase  $knowledgebase
+     * @param \App\Knowledgebase $knowledgebase
+     *
      * @return \Illuminate\Http\Response
      */
     public function show(Knowledgebase $knowledgebase)
@@ -61,7 +63,8 @@ class KnowledgebaseController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Knowledgebase  $knowledgebase
+     * @param \App\Knowledgebase $knowledgebase
+     *
      * @return \Illuminate\Http\Response
      */
     public function edit(Knowledgebase $knowledgebase)
@@ -72,8 +75,9 @@ class KnowledgebaseController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Knowledgebase  $knowledgebase
+     * @param \Illuminate\Http\Request $request
+     * @param \App\Knowledgebase       $knowledgebase
+     *
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Knowledgebase $knowledgebase)
@@ -84,7 +88,8 @@ class KnowledgebaseController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Knowledgebase  $knowledgebase
+     * @param \App\Knowledgebase $knowledgebase
+     *
      * @return \Illuminate\Http\Response
      */
     public function destroy(Knowledgebase $knowledgebase)
