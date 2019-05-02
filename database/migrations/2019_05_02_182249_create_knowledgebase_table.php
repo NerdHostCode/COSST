@@ -18,7 +18,7 @@ class CreateKnowledgebaseTable extends Migration
             $table->string('title');
             $table->text('article');
             $table->integer('views');
-            $table->string('votes');
+            $table->string('votes')->default('{"helpful":"0","unhelpful":"0"}');
             $table->integer('registered')->length('1')->default('0');
             $table->bigInteger('category')->default('0');
             $table->timestamps();
