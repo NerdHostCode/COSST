@@ -23,6 +23,8 @@ class CreateServerConfigurationsTable extends Migration
             $table->mediumText('notes')->nullable();
             $table->timestamps();
         });
+
+
     }
 
     /**

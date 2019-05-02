@@ -21,8 +21,11 @@ class CreateConfigurationTable extends Migration
         });
 
         $this->populate('RegistrationEnabled', '1');
-        $this->populate('SystemURL', 'http://localhost/');
-        $this->populate('CompanyName', env('app.name', 'COSST'));
+        $this->populate('SystemURL', env('APP_URL', 'http://localhost/'));
+        $this->populate('CompanyName', env('APP_NAME', 'COSST'));
+        $this->populate('KBAllowUnregistered', 1);
+        $this->populate('ServerStatusAllowUnregistered', 1);
+        $this->populate('AnnouncementsAllowUnregistered', 1);
     }
 
     private function populate(string $setting, string $value)

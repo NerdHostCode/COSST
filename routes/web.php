@@ -50,3 +50,11 @@ Route::resource('/announcements', 'AnnouncementsController')
         'index' => 'announcements',
         'show'  => 'announcements.show',
     ]);
+
+Route::resource('/knowledgebase', 'KnowledgebaseController')
+    ->only([
+        'index', 'show'
+    ])->names([
+        'index' => 'knowledgebase',
+        'show'  => 'knowledgebase.show',
+    ]);

@@ -52,7 +52,7 @@
             @else
                 <li class="nav-item">
             @endif
-                <a class="nav-link" href="#">@lang('cosst.knowledgebase')</a>
+                <a class="nav-link" href="/knowledgebase">@lang('cosst.knowledgebase')</a>
             </li>
             @if(\Route::current()->getName() == 'announcements')
                 <li class="nav-item active">
