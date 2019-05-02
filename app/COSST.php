@@ -1,8 +1,6 @@
 <?php
 
-
 namespace App;
-
 
 class COSST
 {
@@ -13,6 +11,7 @@ class COSST
             return false;
         } else {
             fclose($fp);
+
             return true;
         }
     }
