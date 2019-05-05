@@ -17,3 +17,4 @@ script:
   - php artisan key:generate
   - php artisan migrate
   - vendor/bin/phpunit
+  - bash <(curl -s https://codecov.io/bash)
