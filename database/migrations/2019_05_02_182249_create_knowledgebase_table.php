@@ -17,7 +17,8 @@ class CreateKnowledgebaseTable extends Migration
             $table->bigIncrements('id');
             $table->string('title');
             $table->text('article');
-            $table->integer('views');
+            $table->enum('hidden', ['0', '1'])->default('0');
+            $table->integer('views')->default('0');
             $table->string('votes')->default('{"helpful":"0","unhelpful":"0"}');
             $table->integer('registered')->length('1')->default('0');
             $table->bigInteger('category')->default('0');
