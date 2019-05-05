@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Configuration;
 use App\Knowledgebase;
+use Auth;
 use Illuminate\Http\Request;
 
 class KnowledgebaseController extends Controller
@@ -23,7 +24,20 @@ class KnowledgebaseController extends Controller
      */
     public function index()
     {
-        //
+        if (Auth::check()) {
+            $knowledgebaseArticles = Knowledgebase::where('hidden', '!=', '1')
+                ->orderBy('views')
+                ->limit(3)
+                ->get();
+        } else {
+            $knowledgebaseArticles = Knowledgebase::where('hidden', '!=', '1')
+                ->where('registered', '!=', '1')
+                ->orderBy('views')
+                ->limit(3)
+                ->get();
+        }
+
+        return view('knowledgebase', compact('knowledgebaseArticles'));
     }
 
     /**
