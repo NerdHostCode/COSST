@@ -32,6 +32,6 @@ class CreateKnowledgebaseTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('knowledgebases');
+        Schema::dropIfExists('knowledgebase');
     }
 }
