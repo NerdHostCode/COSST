@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Configuration;
 use App\Knowledgebase;
-use App\KnowledgebaseCategory;
 use Auth;
 use Illuminate\Http\Request;
 
