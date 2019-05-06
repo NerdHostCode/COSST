@@ -41,8 +41,7 @@ class install extends Command
     public function handle()
     {
         if ($this->confirm('Running this installer will drop all tables in the configured database'
-            . ' effectively starting the database from scratch. Do you wish to continue?')) {
-
+            .' effectively starting the database from scratch. Do you wish to continue?')) {
             try {
                 Artisan::call('key:generate');
                 Artisan::call('migrate:fresh');
@@ -69,12 +68,12 @@ class install extends Command
                     $user->save();
 
                     $this->info('The installation has been completed.');
-                } catch(\Exception $e) {
+                } catch (\Exception $e) {
                     $this->error('Unable to create the Administrator user. Please contact Support.');
                 }
             } else {
                 $this->error('Your passwords did not match. Exiting the installer. '
-                    . 'Please run the installer again.');
+                    .'Please run the installer again.');
             }
         } else {
             $this->error('The installation has been cancelled.');
