@@ -7,7 +7,7 @@ use Artisan;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Hash;
 
-class install extends Command
+class Install extends Command
 {
     /**
      * The name and signature of the console command.
