@@ -5,25 +5,27 @@
 @endsection
 
 @section('main-content')
-    <div class="d-flex align-items-center p-3 my-3 text-white-50 rounded shadow-sm" style="background-color: #b2b5b7">
-        @if(\Auth::check())
-            <img class="mr-3" src="https://www.gravatar.com/avatar/{{ md5(strtolower(\Auth::user()->email)) }}" alt="" width="48" height="48">
-        @endif
-        <div class="lh-100">
+    <div class="row p-3">
+        <div class="col-md-6 d-flex align-items-center p-3 text-white-50 rounded shadow-sm" style="background-color: #b2b5b7">
             @if(\Auth::check())
-                <h6 class="mb-0 text-white lh-100">
-                    @lang('cosst.welcome'), {{ \Auth::user()->name }}!
-                </h6>
-                <small><a href="#">@lang('cosst.viewprofilelink')</a></small>
-            @else
-                <h4 class="mb-0 text-white lh-100">
-                    @lang('cosst.welcometo') {{ \App\Configuration::get('CompanyName') }}
-                </h4>
+                <img class="mr-3" src="https://www.gravatar.com/avatar/{{ md5(strtolower(\Auth::user()->email)) }}" alt="" width="48" height="48">
             @endif
+            <div class="lh-100">
+                @if(\Auth::check())
+                    <h6 class="mb-0 text-white lh-100">
+                        @lang('cosst.welcome'), {{ \Auth::user()->name }}!
+                    </h6>
+                    <small><a href="#">@lang('cosst.viewprofilelink')</a></small>
+                @else
+                    <h4 class="mb-0 text-white lh-100">
+                        @lang('cosst.welcometo') {{ \App\Configuration::get('CompanyName') }}
+                    </h4>
+                @endif
+            </div>
         </div>
     </div>
 
-    <div class="my-3 p-3 bg-white rounded shadow-sm">
+    <div class="col-md-4 my-3 p-3 bg-white rounded shadow-sm">
         <h6 class="border-bottom border-gray pb-2 mb-0">@lang('cosst.announcements')</h6>
             @foreach($announcements as $announcement)
                 <div class="media text-muted pt-3">
