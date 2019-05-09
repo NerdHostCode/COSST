@@ -9,3 +9,11 @@ It is a new project and contributions are welcomed.
 If you'd like to be actively involved, please get in touch via the email below.
 
 github@cosst.co.uk
+
+# Documentation
+Although a work in progress, documentation for this project will be available at:
+
+### https://docs.cosst.co.uk
+
+## Installation
+https://docs.cosst.co.uk/Installing_COSST
