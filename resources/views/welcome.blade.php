@@ -59,13 +59,13 @@
             </small>
         </div>
         <div class="col-md-2">
-            <h6 class="border-bottom border-gray pb-2 mb-0">{{ __('Login') }}</h6>
+            <h6 class="border-bottom border-gray pb-2 mb-0">@lang('cosst.login')</h6>
             <div class="media text-muted pt-3">
                 <p class="media-body pb-3 mb-0 small lh-125 border-gray">
                     <form style="width: 100%;" method="POST" action="{{ route('login') }}">
                         @csrf
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Email address</label>
+                            <label for="email">@lang('cosst.emailaddress')</label>
                             <input type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" id="email" name="email" value="{{ old('email') }}" placeholder="Enter email" autofocus>
                             @if ($errors->has('email'))
                                 <span class="invalid-feedback" role="alert">
@@ -74,7 +74,7 @@
                             @endif
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputPassword1">Password</label>
+                            <label for="password">@lang('cosst.password')</label>
                             <input type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" id="password" name="password" placeholder="Password">
                             @if ($errors->has('password'))
                                 <span class="invalid-feedback" role="alert">
@@ -83,11 +83,11 @@
                             @endif
                         </div>
                         <div class="form-group form-check">
-                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                            <input type="checkbox" class="form-check-input" id="remember" name="remember"{{ old('remember') ? ' checked' : '' }}>
+                            <label class="form-check-label" for="remember">@lang('cosst.rememberme')</label>
                         </div>
                         <div class="form-group pull-right">
-                            <button type="submit" class="btn btn-primary">Login</button>
+                            <button type="submit" class="btn btn-primary">@lang('cosst.login')</button>
                         </div>
                     </form>
                 </p>

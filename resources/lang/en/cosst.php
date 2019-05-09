@@ -27,4 +27,7 @@ return [
     'kbsearchplaceholder'          => 'What can we help you with?',
     'search'                       => 'Search',
     'popularknowledgebasearticles' => 'Popular Knowledgebase Articles',
+    'rememberme'                   => 'Remember Me',
+    'emailaddress'                 => 'Email Address',
+    'password'                     => 'Password',
 ];
