@@ -1,6 +1,7 @@
 <?php
 
 use App\Announcement;
+use App\Knowledgebase;
 
 if (!defined('ROOTDIR')) {
     define('ROOTDIR', dirname(__DIR__));
@@ -21,12 +22,27 @@ Route::get('/', function () {
     $user = null;
     if (\Auth::check()) {
         $user = \Auth::user();
+        $knowledgebaseArticles = Knowledgebase::where('hidden', '!=', '1')
+            ->orderBy('views', 'desc')
+            ->limit(3)
+            ->get();
+    } else {
+        $knowledgebaseArticles = Knowledgebase::where('hidden', '!=', '1')
+            ->where('registered', '!=', '1')
+            ->orderBy('views', 'desc')
+            ->limit(3)
+            ->get();
     }
-    $announcements = Announcement::orderBy('id', 'desc')
+    $announcements = Announcement::where('hidden', '!=', '1')
+        ->orderBy('id', 'desc')
         ->limit(3)
         ->get();
 
-    return view('welcome', compact('announcements', 'user'));
+    return view('welcome', compact(
+        'announcements',
+        'user',
+        'knowledgebaseArticles'
+    ));
 })->name('index');
 
 Route::get('/status', 'PublicController@serviceStatus')->name('service-status');

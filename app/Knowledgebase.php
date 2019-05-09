@@ -10,6 +10,9 @@ class Knowledgebase extends Model
 
     public function categoryData()
     {
-        return $this->hasOne('\App\KnowledgebaseCategory', 'id', 'category');
+        return $this->hasOne('\App\KnowledgebaseCategory', 'id', 'category')
+            ->withDefault([
+                'name' => 'Uncategorized',
+            ]);
     }
 }
